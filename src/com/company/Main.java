@@ -12,6 +12,8 @@ public class Main {
     private static  ArrayList<card> deck = new ArrayList<>(); //holds all the cards from the file, allowing them to be shuffled every time
     private static int numPlayers = 0;
     private static String[] attributeNames;
+    private static int startingPlayer;
+    private static int currentAttribute;
 
     public static void main(String[] args) {
         readFileData();
@@ -21,7 +23,7 @@ public class Main {
         shuffleCards();
         dealCards();
         while (players.size() != 1){
-            getAttributeChoice();
+            getAttributeChoice(players.get(startingPlayer));
         }
     }
 
@@ -80,11 +82,12 @@ public class Main {
     }
     //this method gets the names of each player and initialises the instances of the player class used to represent them
     private static void newGame() {
+        startingPlayer = (int) (Math.random() * numPlayers);
         for (player p:players){
             p.newGame();
         }
     }
-    //wipes all of the
+    //wipes all of the players and assigns a new starting player
     private static void shuffleCards() {
         for (int j = 0; j < 50; j++) { //this shuffles the deck by randomly removing cards and placing them in a new deck
             ArrayList<card> shuffledDeck = new ArrayList<>(); //and it does this 50 times to shuffle it a lot
@@ -95,13 +98,13 @@ public class Main {
             deck = shuffledDeck;
         }
     }
-    //
+    //shuffles the cards
     private static void dealCards() { //this method deals the cards
-        for (int i = 0; i < deck.size(); i++) { //TODO replace player hands with a reference to the players array
+        for (int i = 0; i < deck.size(); i++) {
             players.get(i%numPlayers).addCard(deck.remove(0));
         }
     }
-    //
+    //deals the cards
     private static void getAttributeChoice(player p){
         StringBuilder message = new StringBuilder();
         message.append(p.getName());
@@ -113,9 +116,11 @@ public class Main {
             message.append("\n");
         }
     }
+    //gives the current player the option to choose an attribute from their card
     private static void endRound(player p){
         deck = p.getCards();
     }
+    //ends the round by retrieving all of the cards from the winning player's hand.
 }
 
 class player {
