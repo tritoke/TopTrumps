@@ -21,7 +21,7 @@ public class Main {
         shuffleCards();
         dealCards();
         while (players.size() != 1){
-
+            getAttributeChoice();
         }
     }
 
