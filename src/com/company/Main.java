@@ -137,7 +137,7 @@ public class Main {
                     attributeNames,
                     attributeNames[1])) {
                 case 0:
-                    JOptionPane.showMessageDialog(
+                    JOptionPane.showMessageDialog( //TODO sort this out so that it is a scroll menu type thing and remove name from the selections list
                            null,
                             "please choose a different attribute");
                     break;
