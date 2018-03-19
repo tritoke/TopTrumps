@@ -125,6 +125,12 @@ public class Main {
             message.append("\n");
         }
         message.append("which attribute do you want to choose?");
+
+        String[] messageOptions = new String[attributeNames.length - 1];
+        for (int i = 1; i < attributeNames.length; i++) {
+            messageOptions[i-1] = attributeNames[i];
+        }
+
         do {    //this do while loop loops over the current card being played to ensure the user enters a valid attribute
                 //i.e. not the name of the card, and exits if the user closes the dialog.
             switch (currentAttribute = JOptionPane.showOptionDialog(
@@ -134,10 +140,11 @@ public class Main {
                     JOptionPane.DEFAULT_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
                     null,
-                    attributeNames,
-                    attributeNames[1])) {
+                    messageOptions,
+                    messageOptions[0])) {
                 case 0:
-                    JOptionPane.showMessageDialog( //TODO sort this out so that it is a scroll menu type thing and remove name from the selections list
+                    JOptionPane.showMessageDialog(  //TODO sort this out so that it is a scroll menu type thing and remove name from the selections list
+                                                    //TODO wow this is really broken maybe just remake the whole selector
                            null,
                             "please choose a different attribute");
                     break;
