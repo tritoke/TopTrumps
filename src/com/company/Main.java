@@ -7,7 +7,8 @@ import java.util.stream.*;
 
 public class Main {
 
-    private static final String FILENAME = "\\src\\com\\company\\cards";
+    private static final String FILENAME = "\\src\\com\\company\\cards.txt";
+    //C:\Users\Admin\Documents\GitHub\TopTrumps\src\com\company\cards.txt
     private static ArrayList<player> players = new ArrayList<>(); //holds each instance of the players class
     private static  ArrayList<card> deck = new ArrayList<>(); //holds all the cards from the file, allowing them to be shuffled every time
     private static int numPlayers = 0;
@@ -52,7 +53,12 @@ public class Main {
     //reads data from the card file
     private static String[] removeSpaces(String line) {
         String[] out = line.split(" ");
-        for (int i = 0; i < line.length(); i++) {
+        System.out.println(line + "\n");
+        for (String s:out){
+            System.out.println(s);
+        }
+        System.out.println("\n" + line.length());
+        for (int i = 0; i < out.length; i++) {
             out[i] = out[i%out.length].replaceAll("_", " ");
         }
         return out;
@@ -77,6 +83,9 @@ public class Main {
     private static void getPlayerNames() { //this method creates all of the players and uses a constructor to assign their names
         for (int i = 0; i < numPlayers; i++) {
             String name = JOptionPane.showInputDialog("please enter the name of player " + i + ":");
+            if (name == null){
+                System.exit(0);
+            }
             players.add(new player(name));
         }
     }
@@ -108,13 +117,35 @@ public class Main {
     private static void getAttributeChoice(player p){
         StringBuilder message = new StringBuilder();
         message.append(p.getName());
-        message.append(", your current card is:\n");
+        message.append(", your current card:\n");
         for (int i = 0; i < p.getCurrentCard().getAttributes().length; i++) {
             message.append(attributeNames[i]);
             message.append(": ");
             message.append(p.getCurrentCard().getAttributes()[i]);
             message.append("\n");
         }
+        message.append("which attribute do you want to choose?");
+        do {    //this do while loop loops over the current card being played to ensure the user enters a valid attribute
+                //i.e. not the name of the card, and exits if the user closes the dialog.
+            switch (currentAttribute = JOptionPane.showOptionDialog(
+                    null,
+                    message.toString(),
+                    "attribute choice",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    attributeNames,
+                    attributeNames[1])) {
+                case 0:
+                    JOptionPane.showMessageDialog(
+                           null,
+                            "please choose a different attribute");
+                    break;
+                case JOptionPane.CANCEL_OPTION:
+                    System.exit(0);
+                    break;
+            }
+        } while (currentAttribute != 0);
     }
     //gives the current player the option to choose an attribute from their card
     private static void endRound(player p){
