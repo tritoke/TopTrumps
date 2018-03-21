@@ -7,9 +7,9 @@ import java.io.*;
 public class Main {
 
     private static final String FILENAME = "\\src\\com\\company\\cards.txt";
-    //C:\Users\Admin\Documents\GitHub\TopTrumps\src\com\company\cards.txt
+    //C:\Users\Admin\Documents\GitHub\TopTrumps\src\com\company\cards.txt.txt
     private static ArrayList<player> players = new ArrayList<>(); //holds each instance of the players class
-    private static  ArrayList<card> deck = new ArrayList<>(); //holds all the cards from the file, allowing them to be shuffled every time
+    private static  ArrayList<card> deck = new ArrayList<>(); //holds all the cards.txt from the file, allowing them to be shuffled every time
     private static int numPlayers = 0;
     private static String[] attributeNames;
     private static int currentPlayer;
@@ -25,14 +25,14 @@ public class Main {
             newGame();
             shuffleCards();
             dealCards();
-            //these initialise everything needed for the game i.e. dealing cards etc
+            //these initialise everything needed for the game i.e. dealing cards.txt etc
             while (players.size() != 1) {
                 getAttributeChoice(players.get(currentPlayer));
 
                 checkLosses();
             }
             endRound(players.remove(0));
-        } while (quit());
+        } while (quit("do you want to play another round"));
     }
 
     private static void readFileData() {
@@ -59,10 +59,8 @@ public class Main {
             shuffleCards();
 
             messageOptions = new String[attributeNames.length - 1];
-            for (int i = 1; i < attributeNames.length; i++) {
-                messageOptions[i-1] = attributeNames[i];
-            }   //this for loop adds all of the names of the attributeValues apart from name to a new array
-            //this is done so that the user cannot select name as their attribute choice
+            System.arraycopy(attributeNames, 1, messageOptions, 0, attributeNames.length - 1);
+            //this is done so that the user cannot select name as their attribute choice, because it removes the attribute
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,11 +72,6 @@ public class Main {
         for (int i = 0; i < out.length; i++) {
             out[i] = out[i%out.length].replaceAll("_", " ");
         }
-        /*System.out.println(line + "\n");
-        for (String s:out){
-            System.out.println(s);
-        }*/
-        //remove this comment block to print what it reads from the file
         return out;
     }
     //a method for removing the spaces and underscores used to structure the data in the file
@@ -88,8 +81,11 @@ public class Main {
         do {
             try {
                 if (playerNumString == null) {
-                    System.exit(0);
+                    if(quit("are you sure you want to quit?")){
+                        System.exit(0);
+                    }
                 }
+                assert playerNumString != null;
                 numPlayers = Integer.parseInt(playerNumString);
                 validEntry = true;
             } catch (NumberFormatException e) {
@@ -101,14 +97,21 @@ public class Main {
     private static void getPlayerNames() { //this method creates all of the players and uses a constructor to assign their names
         currentPlayer = (int) (Math.random() * numPlayers); //this random function determines the starting player
         for (int i = 0; i < numPlayers; i++) {
-            String name = JOptionPane.showInputDialog("please enter the name of player " + (i+1) + ":");
-            if (name == null){
-                System.exit(0);
-            }
-            if (i == currentPlayer) {
-                players.add(new player(name, true));
-            } else {
-                players.add(new player(name, false));
+            while(true) {
+                String name = JOptionPane.showInputDialog("please enter the name of player " + (i + 1) + ":");
+                if (name == null) {
+                    if (quit("are you sure you want to quit?")) {
+                        System.exit(0);
+                    }
+                } else {
+                    if (i == currentPlayer) {
+                        players.add(new player(name, true));
+                        break;
+                    } else {
+                        players.add(new player(name, false));
+                        break;
+                    }
+                }
             }
         }
     }
@@ -118,7 +121,7 @@ public class Main {
     }
     //wipes all of the players and assigns a new starting player
     private static void shuffleCards() {
-        for (int j = 0; j < 50; j++) { //this shuffles the deck by randomly removing cards and placing them in a new deck
+        for (int j = 0; j < 50; j++) { //this shuffles the deck by randomly removing cards.txt and placing them in a new deck
             ArrayList<card> shuffledDeck = new ArrayList<>(); //and it does this 50 times to shuffle it a lot
             while (deck.size() > 0) {
                 int index = (int) (Math.random() * deck.size());
@@ -127,51 +130,64 @@ public class Main {
             deck = shuffledDeck;
         }
     }
-    //shuffles the cards
-    private static void dealCards() { //this method deals the cards
+    //shuffles the cards.txt
+    private static void dealCards() { //this method deals the cards.txt
+        System.out.println(deck.size());
         for (int i = 0; i < deck.size(); i++) {
             players.get(i%numPlayers).addCard(deck.remove(0));
         }
+
     }
-    //deals the cards
-    private static void getAttributeChoice( player p){
+    //deals the cards.txt
+    private static void getAttributeChoice(player p){
+        card currentCard = p.getCurrentCard();
         StringBuilder message = new StringBuilder();
         message.append(p.getName());
         message.append(", your current card:\n");
-        for (int i = 0; i < p.getCurrentCard().getAttributeValues().size(); i++) {
+        for (int i = 0; i < currentCard.getAttributeValues().size(); i++) {
             message.append(attributeNames[i]);
             message.append(": ");
-            message.append(p.getCurrentCard().getAttributeValues().get(i));
+            message.append(currentCard.getAttributeValues().get(i));
             message.append("\n");
         }
         message.append("which attribute do you want to choose?");
         //these lines create the message ^^
-
-        String reply = (String) JOptionPane.showInputDialog(
-                null,
-                message.toString(),
-                "value selector",
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                messageOptions,
-                messageOptions[0]);
-        if (reply == null) {
-            System.exit(0);
-        }
-        System.out.println(reply);
-        for (int i = 0; i < messageOptions.length; i++) {
-            if (reply.equals(messageOptions[i])){
-                currentAttribute = i;
+        while(true) {
+            String reply = (String) JOptionPane.showInputDialog(
+                    null,
+                    message.toString(),
+                    "value selector",
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    messageOptions,
+                    messageOptions[0]);
+            //this reply string contains the user's response for which attribute of the card they want to play
+            if (reply == null) {
+                if (quit("are you sure you want to quit?")) {
+                    System.exit(0);
+                }
+            } else {
+                //this checks if the user closed the window and exits the program if the user meant to.
+                for (int i = 0; i < messageOptions.length; i++) {
+                    if (reply.equals(messageOptions[i])) {
+                        currentAttribute = i;
+                    }
+                }
+                break;
             }
         }
     }
     //gives the current player the option to choose an attribute from their card
     private static void compareAttributes(){
-        int winningPlayerIndex = 0;
-        //int maxAttributeValue = Integer.parseInt(players.get(currentPlayer).getCurrentCard().getAttributeValues()[currentAttribute]);
+        ArrayList<card> cardPile = new ArrayList<>();
+        int winningPlayerIndex = currentPlayer;
+        card currentCard = players.get(currentPlayer).getCurrentCard();
+        int maxAttributeValue = currentCard.getAttributeValues().get(currentAttribute);
         //this line looks complicated but actually just gets the value of the selected attribute
+        //for() //TODO this method
+
     }
-    //this method goes through all the cards that players
+    //this method goes through all the cards.txt that players
     private static void checkLosses(){
         for (player p:players) {
             if (p.getCards().size() == 0){
@@ -180,22 +196,22 @@ public class Main {
                 loseMessage.append(" unfortunately you have lost");
                 JOptionPane.showConfirmDialog(
                         null,
-                                        loseMessage.toString()
+                        loseMessage.toString()
                 );
                 players.remove(p);
             }
         }
         //TODO create a scoreboard thing
     }
-    //this method checks if a player has no cards left, if they do they are removed, it also shows a scoreboard
+    //this method checks if a player has no cards.txt left, if they do they are removed, it also shows a scoreboard
     private static void endRound(player p){
         deck = p.getCards();
     }
-    //ends the round by retrieving all of the cards from the winning player's hand.
-    private static boolean quit(){
+    //ends the round by retrieving all of the cards.txt from the winning player's hand.
+    private static boolean quit(String message){
         int choice = JOptionPane.showConfirmDialog(
                 null,
-                "do you want to play another round",
+                message,
                 "Quit?",
                 JOptionPane.YES_NO_OPTION);
         System.out.println(choice);
