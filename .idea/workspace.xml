@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f3d7032-a29e-4355-9367-ebbf21ed12f5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="8f3d7032-a29e-4355-9367-ebbf21ed12f5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,35 +11,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="132" column="62" lean-forward="true" selection-start-line="132" selection-start-column="62" selection-end-line="132" selection-end-column="62" />
+            <state relative-caret-position="355">
+              <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#readFileData#0;class#Main#0" expanded="false" />
-                <element signature="method#removeSpaces#0;class#Main#0" expanded="false" />
-                <element signature="method#getNumPlaying#0;class#Main#0" expanded="false" />
-                <element signature="method#getPlayerNames#0;class#Main#0" expanded="false" />
-                <element signature="e#4974#4975#0" expanded="true" />
-                <element signature="e#5022#5023#0" expanded="true" />
-                <element signature="method#shuffleCards#0;class#Main#0" expanded="false" />
-                <element signature="e#8153#8154#0" expanded="true" />
-                <element signature="e#8188#8189#0" expanded="true" />
+                <element signature="e#5148#5149#0" expanded="true" />
+                <element signature="e#5196#5197#0" expanded="true" />
+                <element signature="e#8959#8960#0" expanded="true" />
+                <element signature="e#8994#8995#0" expanded="true" />
                 <element signature="method#player#0;class#player#0" expanded="false" />
-                <element signature="e#9037#9038#0" expanded="true" />
-                <element signature="e#9073#9074#0" expanded="true" />
-                <element signature="e#9131#9132#0" expanded="true" />
-                <element signature="e#9181#9182#0" expanded="true" />
-                <element signature="e#9457#9458#0" expanded="true" />
-                <element signature="e#9495#9496#0" expanded="true" />
+                <element signature="e#9833#9834#0" expanded="true" />
+                <element signature="e#9869#9870#0" expanded="true" />
+                <element signature="e#9927#9928#0" expanded="true" />
+                <element signature="e#9977#9978#0" expanded="true" />
+                <element signature="e#10253#10254#0" expanded="true" />
+                <element signature="e#10291#10292#0" expanded="true" />
                 <element signature="class#card#0" expanded="false" />
-                <element signature="e#9842#9843#0" expanded="true" />
-                <element signature="e#9878#9879#0" expanded="true" />
-                <element signature="e#9931#9932#0" expanded="true" />
-                <element signature="e#9969#9970#0" expanded="true" />
+                <element signature="e#10638#10639#0" expanded="true" />
+                <element signature="e#10674#10675#0" expanded="true" />
+                <element signature="e#10727#10728#0" expanded="true" />
+                <element signature="e#10765#10766#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,9 +101,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,7 +139,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,6 +216,7 @@
       <workItem from="1521419061995" duration="100000" />
       <workItem from="1521419210554" duration="439000" />
       <workItem from="1521581087687" duration="8687000" />
+      <workItem from="1521661381759" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="r3">
       <created>1521255147027</created>
@@ -252,11 +246,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521589776273</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="latest">
+      <created>1521671040719</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1521671040719</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17616000" />
+    <option name="totallyTimeSpent" value="18247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -276,7 +277,6 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985204" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -288,6 +288,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985204" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -345,27 +346,56 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFileData#0;class#Main#0" expanded="false" />
-            <element signature="method#removeSpaces#0;class#Main#0" expanded="false" />
-            <element signature="method#getNumPlaying#0;class#Main#0" expanded="false" />
-            <element signature="method#getPlayerNames#0;class#Main#0" expanded="false" />
-            <element signature="e#4974#4975#0" expanded="true" />
-            <element signature="e#5022#5023#0" expanded="true" />
-            <element signature="method#shuffleCards#0;class#Main#0" expanded="false" />
-            <element signature="e#8153#8154#0" expanded="true" />
-            <element signature="e#8188#8189#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5196#5197#0" expanded="true" />
+            <element signature="e#8959#8960#0" expanded="true" />
+            <element signature="e#8994#8995#0" expanded="true" />
             <element signature="method#player#0;class#player#0" expanded="false" />
-            <element signature="e#9037#9038#0" expanded="true" />
-            <element signature="e#9073#9074#0" expanded="true" />
-            <element signature="e#9131#9132#0" expanded="true" />
-            <element signature="e#9181#9182#0" expanded="true" />
-            <element signature="e#9457#9458#0" expanded="true" />
-            <element signature="e#9495#9496#0" expanded="true" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#9869#9870#0" expanded="true" />
+            <element signature="e#9927#9928#0" expanded="true" />
+            <element signature="e#9977#9978#0" expanded="true" />
+            <element signature="e#10253#10254#0" expanded="true" />
+            <element signature="e#10291#10292#0" expanded="true" />
             <element signature="class#card#0" expanded="false" />
-            <element signature="e#9842#9843#0" expanded="true" />
-            <element signature="e#9878#9879#0" expanded="true" />
-            <element signature="e#9931#9932#0" expanded="true" />
-            <element signature="e#9969#9970#0" expanded="true" />
+            <element signature="e#10638#10639#0" expanded="true" />
+            <element signature="e#10674#10675#0" expanded="true" />
+            <element signature="e#10727#10728#0" expanded="true" />
+            <element signature="e#10765#10766#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/cards.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5196#5197#0" expanded="true" />
+            <element signature="e#8959#8960#0" expanded="true" />
+            <element signature="e#8994#8995#0" expanded="true" />
+            <element signature="method#player#0;class#player#0" expanded="false" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#9869#9870#0" expanded="true" />
+            <element signature="e#9927#9928#0" expanded="true" />
+            <element signature="e#9977#9978#0" expanded="true" />
+            <element signature="e#10253#10254#0" expanded="true" />
+            <element signature="e#10291#10292#0" expanded="true" />
+            <element signature="class#card#0" expanded="false" />
+            <element signature="e#10638#10639#0" expanded="true" />
+            <element signature="e#10674#10675#0" expanded="true" />
+            <element signature="e#10727#10728#0" expanded="true" />
+            <element signature="e#10765#10766#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -384,27 +414,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFileData#0;class#Main#0" expanded="false" />
-            <element signature="method#removeSpaces#0;class#Main#0" expanded="false" />
-            <element signature="method#getNumPlaying#0;class#Main#0" expanded="false" />
-            <element signature="method#getPlayerNames#0;class#Main#0" expanded="false" />
-            <element signature="e#4974#4975#0" expanded="true" />
-            <element signature="e#5022#5023#0" expanded="true" />
-            <element signature="method#shuffleCards#0;class#Main#0" expanded="false" />
-            <element signature="e#8153#8154#0" expanded="true" />
-            <element signature="e#8188#8189#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5196#5197#0" expanded="true" />
+            <element signature="e#8959#8960#0" expanded="true" />
+            <element signature="e#8994#8995#0" expanded="true" />
             <element signature="method#player#0;class#player#0" expanded="false" />
-            <element signature="e#9037#9038#0" expanded="true" />
-            <element signature="e#9073#9074#0" expanded="true" />
-            <element signature="e#9131#9132#0" expanded="true" />
-            <element signature="e#9181#9182#0" expanded="true" />
-            <element signature="e#9457#9458#0" expanded="true" />
-            <element signature="e#9495#9496#0" expanded="true" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#9869#9870#0" expanded="true" />
+            <element signature="e#9927#9928#0" expanded="true" />
+            <element signature="e#9977#9978#0" expanded="true" />
+            <element signature="e#10253#10254#0" expanded="true" />
+            <element signature="e#10291#10292#0" expanded="true" />
             <element signature="class#card#0" expanded="false" />
-            <element signature="e#9842#9843#0" expanded="true" />
-            <element signature="e#9878#9879#0" expanded="true" />
-            <element signature="e#9931#9932#0" expanded="true" />
-            <element signature="e#9969#9970#0" expanded="true" />
+            <element signature="e#10638#10639#0" expanded="true" />
+            <element signature="e#10674#10675#0" expanded="true" />
+            <element signature="e#10727#10728#0" expanded="true" />
+            <element signature="e#10765#10766#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -423,27 +448,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFileData#0;class#Main#0" expanded="false" />
-            <element signature="method#removeSpaces#0;class#Main#0" expanded="false" />
-            <element signature="method#getNumPlaying#0;class#Main#0" expanded="false" />
-            <element signature="method#getPlayerNames#0;class#Main#0" expanded="false" />
-            <element signature="e#4974#4975#0" expanded="true" />
-            <element signature="e#5022#5023#0" expanded="true" />
-            <element signature="method#shuffleCards#0;class#Main#0" expanded="false" />
-            <element signature="e#8153#8154#0" expanded="true" />
-            <element signature="e#8188#8189#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5196#5197#0" expanded="true" />
+            <element signature="e#8959#8960#0" expanded="true" />
+            <element signature="e#8994#8995#0" expanded="true" />
             <element signature="method#player#0;class#player#0" expanded="false" />
-            <element signature="e#9037#9038#0" expanded="true" />
-            <element signature="e#9073#9074#0" expanded="true" />
-            <element signature="e#9131#9132#0" expanded="true" />
-            <element signature="e#9181#9182#0" expanded="true" />
-            <element signature="e#9457#9458#0" expanded="true" />
-            <element signature="e#9495#9496#0" expanded="true" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#9869#9870#0" expanded="true" />
+            <element signature="e#9927#9928#0" expanded="true" />
+            <element signature="e#9977#9978#0" expanded="true" />
+            <element signature="e#10253#10254#0" expanded="true" />
+            <element signature="e#10291#10292#0" expanded="true" />
             <element signature="class#card#0" expanded="false" />
-            <element signature="e#9842#9843#0" expanded="true" />
-            <element signature="e#9878#9879#0" expanded="true" />
-            <element signature="e#9931#9932#0" expanded="true" />
-            <element signature="e#9969#9970#0" expanded="true" />
+            <element signature="e#10638#10639#0" expanded="true" />
+            <element signature="e#10674#10675#0" expanded="true" />
+            <element signature="e#10727#10728#0" expanded="true" />
+            <element signature="e#10765#10766#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -462,27 +482,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFileData#0;class#Main#0" expanded="false" />
-            <element signature="method#removeSpaces#0;class#Main#0" expanded="false" />
-            <element signature="method#getNumPlaying#0;class#Main#0" expanded="false" />
-            <element signature="method#getPlayerNames#0;class#Main#0" expanded="false" />
-            <element signature="e#4974#4975#0" expanded="true" />
-            <element signature="e#5022#5023#0" expanded="true" />
-            <element signature="method#shuffleCards#0;class#Main#0" expanded="false" />
-            <element signature="e#8153#8154#0" expanded="true" />
-            <element signature="e#8188#8189#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5196#5197#0" expanded="true" />
+            <element signature="e#8959#8960#0" expanded="true" />
+            <element signature="e#8994#8995#0" expanded="true" />
             <element signature="method#player#0;class#player#0" expanded="false" />
-            <element signature="e#9037#9038#0" expanded="true" />
-            <element signature="e#9073#9074#0" expanded="true" />
-            <element signature="e#9131#9132#0" expanded="true" />
-            <element signature="e#9181#9182#0" expanded="true" />
-            <element signature="e#9457#9458#0" expanded="true" />
-            <element signature="e#9495#9496#0" expanded="true" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#9869#9870#0" expanded="true" />
+            <element signature="e#9927#9928#0" expanded="true" />
+            <element signature="e#9977#9978#0" expanded="true" />
+            <element signature="e#10253#10254#0" expanded="true" />
+            <element signature="e#10291#10292#0" expanded="true" />
             <element signature="class#card#0" expanded="false" />
-            <element signature="e#9842#9843#0" expanded="true" />
-            <element signature="e#9878#9879#0" expanded="true" />
-            <element signature="e#9931#9932#0" expanded="true" />
-            <element signature="e#9969#9970#0" expanded="true" />
+            <element signature="e#10638#10639#0" expanded="true" />
+            <element signature="e#10674#10675#0" expanded="true" />
+            <element signature="e#10727#10728#0" expanded="true" />
+            <element signature="e#10765#10766#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -501,27 +516,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFileData#0;class#Main#0" expanded="false" />
-            <element signature="method#removeSpaces#0;class#Main#0" expanded="false" />
-            <element signature="method#getNumPlaying#0;class#Main#0" expanded="false" />
-            <element signature="method#getPlayerNames#0;class#Main#0" expanded="false" />
-            <element signature="e#4974#4975#0" expanded="true" />
-            <element signature="e#5022#5023#0" expanded="true" />
-            <element signature="method#shuffleCards#0;class#Main#0" expanded="false" />
-            <element signature="e#8153#8154#0" expanded="true" />
-            <element signature="e#8188#8189#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5196#5197#0" expanded="true" />
+            <element signature="e#8959#8960#0" expanded="true" />
+            <element signature="e#8994#8995#0" expanded="true" />
             <element signature="method#player#0;class#player#0" expanded="false" />
-            <element signature="e#9037#9038#0" expanded="true" />
-            <element signature="e#9073#9074#0" expanded="true" />
-            <element signature="e#9131#9132#0" expanded="true" />
-            <element signature="e#9181#9182#0" expanded="true" />
-            <element signature="e#9457#9458#0" expanded="true" />
-            <element signature="e#9495#9496#0" expanded="true" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#9869#9870#0" expanded="true" />
+            <element signature="e#9927#9928#0" expanded="true" />
+            <element signature="e#9977#9978#0" expanded="true" />
+            <element signature="e#10253#10254#0" expanded="true" />
+            <element signature="e#10291#10292#0" expanded="true" />
             <element signature="class#card#0" expanded="false" />
-            <element signature="e#9842#9843#0" expanded="true" />
-            <element signature="e#9878#9879#0" expanded="true" />
-            <element signature="e#9931#9932#0" expanded="true" />
-            <element signature="e#9969#9970#0" expanded="true" />
+            <element signature="e#10638#10639#0" expanded="true" />
+            <element signature="e#10674#10675#0" expanded="true" />
+            <element signature="e#10727#10728#0" expanded="true" />
+            <element signature="e#10765#10766#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -539,31 +549,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="132" column="62" lean-forward="true" selection-start-line="132" selection-start-column="62" selection-end-line="132" selection-end-column="62" />
+        <state relative-caret-position="355">
+          <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFileData#0;class#Main#0" expanded="false" />
-            <element signature="method#removeSpaces#0;class#Main#0" expanded="false" />
-            <element signature="method#getNumPlaying#0;class#Main#0" expanded="false" />
-            <element signature="method#getPlayerNames#0;class#Main#0" expanded="false" />
-            <element signature="e#4974#4975#0" expanded="true" />
-            <element signature="e#5022#5023#0" expanded="true" />
-            <element signature="method#shuffleCards#0;class#Main#0" expanded="false" />
-            <element signature="e#8153#8154#0" expanded="true" />
-            <element signature="e#8188#8189#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5196#5197#0" expanded="true" />
+            <element signature="e#8959#8960#0" expanded="true" />
+            <element signature="e#8994#8995#0" expanded="true" />
             <element signature="method#player#0;class#player#0" expanded="false" />
-            <element signature="e#9037#9038#0" expanded="true" />
-            <element signature="e#9073#9074#0" expanded="true" />
-            <element signature="e#9131#9132#0" expanded="true" />
-            <element signature="e#9181#9182#0" expanded="true" />
-            <element signature="e#9457#9458#0" expanded="true" />
-            <element signature="e#9495#9496#0" expanded="true" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#9869#9870#0" expanded="true" />
+            <element signature="e#9927#9928#0" expanded="true" />
+            <element signature="e#9977#9978#0" expanded="true" />
+            <element signature="e#10253#10254#0" expanded="true" />
+            <element signature="e#10291#10292#0" expanded="true" />
             <element signature="class#card#0" expanded="false" />
-            <element signature="e#9842#9843#0" expanded="true" />
-            <element signature="e#9878#9879#0" expanded="true" />
-            <element signature="e#9931#9932#0" expanded="true" />
-            <element signature="e#9969#9970#0" expanded="true" />
+            <element signature="e#10638#10639#0" expanded="true" />
+            <element signature="e#10674#10675#0" expanded="true" />
+            <element signature="e#10727#10728#0" expanded="true" />
+            <element signature="e#10765#10766#0" expanded="true" />
           </folding>
         </state>
       </provider>
