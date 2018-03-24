@@ -15,6 +15,7 @@ public class Main {
     private static int currentPlayer;
     private static int currentAttribute;
     private static String[] messageOptions;
+    private static ArrayList<card> cardPile;
 
     public static void main(String[] args) {
         do {
@@ -27,8 +28,10 @@ public class Main {
             dealCards();
             //these initialise everything needed for the game i.e. dealing cards.txt etc
             while (players.size() != 1) {
+                cardPile = new ArrayList<>();
+                //cardPile stores all the cards which players play during the round
                 getAttributeChoice(players.get(currentPlayer));
-
+                drawResolver(compareAttributes(players));
                 checkLosses();
             }
             endRound(players.remove(0));
@@ -42,8 +45,10 @@ public class Main {
             fileReader = new FileReader(System.getProperty("user.dir") + FILENAME);
             bufferedReader = new BufferedReader(fileReader);
             attributeNames = removeSpaces(bufferedReader.readLine());
+            for(String s:attributeNames){
+                System.out.println(s);
+            }
             String currentLine;
-            int counter = 0;
             while((currentLine = bufferedReader.readLine()) != null) {
                 String[] splitLine = removeSpaces(currentLine);
                 String cardName = splitLine[0];
@@ -52,7 +57,6 @@ public class Main {
                     attributeValues.add(Integer.parseInt(splitLine[i]));
                 }
                 deck.add(new card(cardName, attributeValues));
-                counter++;
             }
             bufferedReader.close();
             fileReader.close();
@@ -104,13 +108,8 @@ public class Main {
                         System.exit(0);
                     }
                 } else {
-                    if (i == currentPlayer) {
-                        players.add(new player(name, true));
-                        break;
-                    } else {
-                        players.add(new player(name, false));
-                        break;
-                    }
+                    players.add(new player(name));
+                    break;
                 }
             }
         }
@@ -119,7 +118,7 @@ public class Main {
     private static void newGame() {
         players.forEach(player::newGame);
     }
-    //wipes all of the players and assigns a new starting player
+    //wipes all of the players
     private static void shuffleCards() {
         for (int j = 0; j < 50; j++) { //this shuffles the deck by randomly removing cards.txt and placing them in a new deck
             ArrayList<card> shuffledDeck = new ArrayList<>(); //and it does this 50 times to shuffle it a lot
@@ -178,34 +177,80 @@ public class Main {
         }
     }
     //gives the current player the option to choose an attribute from their card
-    private static void compareAttributes(){
-        ArrayList<card> cardPile = new ArrayList<>();
-        int winningPlayerIndex = currentPlayer;
-        card currentCard = players.get(currentPlayer).getCurrentCard();
-        int maxAttributeValue = currentCard.getAttributeValues().get(currentAttribute);
-        //this line looks complicated but actually just gets the value of the selected attribute
-        //for() //TODO this method
-
+    private static ArrayList<player> compareAttributes(ArrayList<player> playerIn) {
+        ArrayList<player> winningPlayers = null;
+        for (player p : playerIn) {
+            cardPile.add(p.getCurrentCard());
+        }
+        int maxAttributeValue = 0;
+        currentPlayer = 0;
+        for (int i = 0; i < playerIn.size(); i++) {
+            winningPlayers = new ArrayList<>();
+            int currentCardValue = cardPile.get(i).getAttributeValues().get(currentAttribute);
+            winningPlayers.add(playerIn.get(i));
+            if (currentCardValue > maxAttributeValue) {
+                maxAttributeValue = currentCardValue;
+                currentPlayer = i;
+            } else if (currentCardValue == maxAttributeValue) {
+                winningPlayers.add(playerIn.get(i));
+            }
+        }
+        return winningPlayers;
     }
-    //this method goes through all the cards.txt that players
+    //this method takes in some players and finds the ones with winning values
+    private static void drawResolver(ArrayList<player> winningPlayers) {
+        for (player p : winningPlayers) {
+            if (p.getCards().size() == 0) {
+                winningPlayers.remove(p);
+            }
+        }
+        //this for loop goes through the players and removes all the ones who have no cards
+        if (winningPlayers.size() > 1) {
+            StringBuilder message = new StringBuilder("there has been a draw between ");
+            message.append(winningPlayers.size());
+            message.append(" players:\n");
+            for (player p : winningPlayers) {
+                message.append(p.getName());
+                message.append("\n");
+            }
+            currentPlayer = (int) (Math.random() * winningPlayers.size());
+            message.append("\n");
+            message.append(winningPlayers.get(currentPlayer).getName());
+            message.append(" has been randomly chosen to choose the next attribute");
+            JOptionPane.showConfirmDialog(
+                    null,
+                    message.toString()
+            );
+            getAttributeChoice(winningPlayers.get(currentPlayer));
+            ArrayList<player> remainingPlayers = compareAttributes(winningPlayers);
+            if (remainingPlayers.size() != 1) {
+                drawResolver(remainingPlayers);
+            } else {
+                remainingPlayers.get(0).addCards(cardPile);
+            }
+        } else {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "everyone who drew has run out of cards,\nso those cards are discarded and a new\n player has been chosen at random.");
+            deck.addAll(cardPile);
+        }
+    }
+    //this method resolves draws by recursively calling itself until there one player remains
     private static void checkLosses(){
         for (player p:players) {
             if (p.getCards().size() == 0){
-                StringBuilder loseMessage = new StringBuilder();
-                loseMessage.append(p.getName());
-                loseMessage.append(" unfortunately you have lost");
                 JOptionPane.showConfirmDialog(
                         null,
-                        loseMessage.toString()
+                        p.getName() +
+                                " unfortunately you have lost"
                 );
                 players.remove(p);
             }
         }
-        //TODO create a scoreboard thing
     }
     //this method checks if a player has no cards.txt left, if they do they are removed, it also shows a scoreboard
     private static void endRound(player p){
-        deck = p.getCards();
+        deck.addAll(p.getCards());
     }
     //ends the round by retrieving all of the cards.txt from the winning player's hand.
     private static boolean quit(String message){
@@ -223,21 +268,13 @@ public class Main {
 class player {
     private ArrayList<card> cards = new ArrayList<>();
     private String name;
-    private boolean currentPlayer;
 
-    player(String name, boolean currentPlayer){
+    player(String name){
         this.name = name;
-        this.currentPlayer = currentPlayer;
     }
 
     public void newGame(){
         this.cards.clear();
-    }
-    public boolean isCurrentPlayer() {
-        return currentPlayer;
-    }
-    public void setCurrentPlayer(boolean currentPlayer) {
-        this.currentPlayer = currentPlayer;
     }
     public void addCard(card card) {
         this.cards.add(card);
